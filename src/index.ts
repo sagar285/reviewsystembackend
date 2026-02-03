@@ -8,7 +8,7 @@ import cluster from 'cluster';
 import os from 'os';
 
 const numCPUs = os.cpus().length;
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 if (cluster.isPrimary) {
   console.log(`Primary ${process.pid} is running`);
